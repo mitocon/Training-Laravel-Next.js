@@ -1,4 +1,5 @@
-# リポジトリ初回作成手順
+## リポジトリ初回作成手順
+スクラップ後のリポジトリ作成手順となります
 
 - ローカルマシンでSSHキーを作成
 ```
@@ -23,23 +24,23 @@ Host github-workinfo
 # IdentityFileは先ほどのSSHキー
 ```
 
-## 作業リポジトリを作成
+### 作業リポジトリを作成
 GitHubアカウントは作成済みとする。以下bash
 ```
-mkdir Udemy-Laravel-Next.js
-cd Udemy-Laravel-Next.js
+mkdir Training-Laravel-Next.js
+cd Training-Laravel-Next.js
 git init
 git branch -m main
 git config user.name "{{your name}}"
 git config user.email "{{your email}}"
 ```
 
-- GitHubブラウザ上でリモートリポジトリを作成。Udemy-Laravel-Next.jsなど
-- SSHを控えておく（git@github.com:mitocon/Udemy-Laravel-Next.js.git）
+- GitHubブラウザ上でリモートリポジトリを作成。Training-Laravel-Next.jsなど
+- SSHを控えておく（git@github.com:mitocon/Training-Laravel-Next.js.git）
 - ローカルで以下のコマンドを実行してremote add
 ```
 # configで設定したエイリアスを使用時
-git remote add origin git@github-workinfo:mitocon/Udemy-Laravel-Next.js.git
+git remote add origin git@github-workinfo:mitocon/Training-Laravel-Next.js.git
 
 # git@{{エイリアス}}:{{ユーザー名}}/{{リポジトリ名}}
 # git remote -v でリモートリポジトリを確認できる
@@ -54,7 +55,7 @@ ssh -T git@github-workinfo
 # この表示でOK
 ```
 
-## commit, push
+### commit, push
 - 適当なファイルを作ってadd, commit, pushする
 ```
 touch README.md
