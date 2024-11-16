@@ -65,3 +65,15 @@ git push -u origin main
 ```
 
 完了
+
+## 起動時
+### back-end
+php -v で8.2以上であること。
+```
+php artisan serve
+```
+
+### back-end
+```
+npm run dev
+```
