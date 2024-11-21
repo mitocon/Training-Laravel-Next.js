@@ -3,4 +3,5 @@ TODO.md
 .vscode
 .php-version
 back-end/content/SecuritiesReport/*
-!back-end/content/SecuritiesReport/.keep
+!back-end/content/SecuritiesReport/.keep.md
+!back-end/content/SecuritiesReport/dummy
