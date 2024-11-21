@@ -77,3 +77,7 @@ php artisan serve
 ```
 npm run dev
 ```
+
+#### XBRL形式でのデータ取得方法
+ブラウザで http://localhost:8000/api/get_securities_report を叩く  
+するとback-end/content内にファイルをDLする
