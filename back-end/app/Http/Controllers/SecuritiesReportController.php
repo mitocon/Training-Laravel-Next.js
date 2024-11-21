@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Http;
 use ZipArchive;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
+use Illuminate\Http\JsonResponse;
 
 class SecuritiesReportController extends Controller
 {
@@ -102,5 +102,32 @@ class SecuritiesReportController extends Controller
         }
 
         echo "Finished processing all dates. Total files downloaded: $downloadCount\n";
+    }
+
+    function getSecuritiesReportList(): JsonResponse
+    {
+        $filePath = base_path("content/SecuritiesReport/dummy/all.json");
+        $fileContent = File::get($filePath);
+        $data = json_decode($fileContent, true);
+
+        return response()->json($data);
+    }
+
+    public function getSecuritiesReport(int $company_id): JsonResponse
+    {
+        $filePath = base_path("content/SecuritiesReport/dummy/{$company_id}.json");
+
+        // ファイルが存在しない場合のエラーハンドリング
+        if (!File::exists($filePath)) {
+            return response()->json([
+                'status' => 'error',
+                'message' => "File for company_id {$company_id} not found."
+            ], 404);
+        }
+
+        $fileContent = File::get($filePath);
+        $data = json_decode($fileContent, true);
+
+        return response()->json($data);
     }
 }
