@@ -1,0 +1,204 @@
+{
+  "SecuritiesReports": [
+    {
+      "companyID": 5247,
+      "SecuritiesReport": [
+        {
+          "PublishDate": "2023-08-21",
+          "QuarterLabel": "2023-Q3",
+          "NetSales": 31025,
+          "OperatingIncome": 2700,
+          "DepreciationAndAmortization": 920,
+          "Equity": 115000,
+          "TotalAssets": 125000
+        },
+        {
+          "PublishDate": "2023-11-21",
+          "QuarterLabel": "2023-Q4",
+          "NetSales": 34000,
+          "OperatingIncome": 2800,
+          "DepreciationAndAmortization": 950,
+          "Equity": 117500,
+          "TotalAssets": 128000
+        },
+        {
+          "PublishDate": "2024-02-21",
+          "QuarterLabel": "2024-Q1",
+          "NetSales": 36000,
+          "OperatingIncome": 2900,
+          "DepreciationAndAmortization": 970,
+          "Equity": 120000,
+          "TotalAssets": 131000
+        },
+        {
+          "PublishDate": "2024-05-21",
+          "QuarterLabel": "2024-Q2",
+          "NetSales": 37500,
+          "OperatingIncome": 3000,
+          "DepreciationAndAmortization": 990,
+          "Equity": 122500,
+          "TotalAssets": 133500
+        },
+        {
+          "PublishDate": "2024-11-21",
+          "QuarterLabel": "2024-Q3",
+          "NetSales": 35315,
+          "OperatingIncome": 2856,
+          "DepreciationAndAmortization": 987,
+          "Equity": 118269,
+          "TotalAssets": 129677
+        }
+      ]
+    },
+    {
+      "companyID": 6358,
+      "SecuritiesReport": [
+        {
+          "PublishDate": "2023-08-18",
+          "QuarterLabel": "2023-Q3",
+          "NetSales": 29500,
+          "OperatingIncome": 2500,
+          "DepreciationAndAmortization": 890,
+          "Equity": 112000,
+          "TotalAssets": 121500
+        },
+        {
+          "PublishDate": "2023-11-20",
+          "QuarterLabel": "2023-Q4",
+          "NetSales": 32000,
+          "OperatingIncome": 2600,
+          "DepreciationAndAmortization": 910,
+          "Equity": 114500,
+          "TotalAssets": 124000
+        },
+        {
+          "PublishDate": "2024-02-19",
+          "QuarterLabel": "2024-Q1",
+          "NetSales": 34000,
+          "OperatingIncome": 2750,
+          "DepreciationAndAmortization": 930,
+          "Equity": 117000,
+          "TotalAssets": 126500
+        },
+        {
+          "PublishDate": "2024-05-20",
+          "QuarterLabel": "2024-Q2",
+          "NetSales": 35500,
+          "OperatingIncome": 2850,
+          "DepreciationAndAmortization": 950,
+          "Equity": 119500,
+          "TotalAssets": 129000
+        },
+        {
+          "PublishDate": "2024-11-21",
+          "QuarterLabel": "2024-Q3",
+          "NetSales": 33300,
+          "OperatingIncome": 2700,
+          "DepreciationAndAmortization": 940,
+          "Equity": 116500,
+          "TotalAssets": 125000
+        }
+      ]
+    },
+    {
+      "companyID": 7469,
+      "SecuritiesReport": [
+        {
+          "PublishDate": "2023-08-15",
+          "QuarterLabel": "2023-Q3",
+          "NetSales": 41000,
+          "OperatingIncome": 3200,
+          "DepreciationAndAmortization": 1200,
+          "Equity": 140000,
+          "TotalAssets": 160000
+        },
+        {
+          "PublishDate": "2023-11-18",
+          "QuarterLabel": "2023-Q4",
+          "NetSales": 43500,
+          "OperatingIncome": 3400,
+          "DepreciationAndAmortization": 1250,
+          "Equity": 145000,
+          "TotalAssets": 165500
+        },
+        {
+          "PublishDate": "2024-02-17",
+          "QuarterLabel": "2024-Q1",
+          "NetSales": 46000,
+          "OperatingIncome": 3600,
+          "DepreciationAndAmortization": 1300,
+          "Equity": 150000,
+          "TotalAssets": 171000
+        },
+        {
+          "PublishDate": "2024-05-18",
+          "QuarterLabel": "2024-Q2",
+          "NetSales": 48000,
+          "OperatingIncome": 3750,
+          "DepreciationAndAmortization": 1350,
+          "Equity": 155000,
+          "TotalAssets": 176500
+        },
+        {
+          "PublishDate": "2024-11-21",
+          "QuarterLabel": "2024-Q3",
+          "NetSales": 50000,
+          "OperatingIncome": 3900,
+          "DepreciationAndAmortization": 1400,
+          "Equity": 160000,
+          "TotalAssets": 182000
+        }
+      ]
+    },
+    {
+      "companyID": 8570,
+      "SecuritiesReport": [
+        {
+          "PublishDate": "2023-08-20",
+          "QuarterLabel": "2023-Q3",
+          "NetSales": 52000,
+          "OperatingIncome": 4300,
+          "DepreciationAndAmortization": 1500,
+          "Equity": 200000,
+          "TotalAssets": 240000
+        },
+        {
+          "PublishDate": "2023-11-22",
+          "QuarterLabel": "2023-Q4",
+          "NetSales": 55000,
+          "OperatingIncome": 4500,
+          "DepreciationAndAmortization": 1550,
+          "Equity": 210000,
+          "TotalAssets": 250000
+        },
+        {
+          "PublishDate": "2024-02-25",
+          "QuarterLabel": "2024-Q1",
+          "NetSales": 58000,
+          "OperatingIncome": 4700,
+          "DepreciationAndAmortization": 1600,
+          "Equity": 220000,
+          "TotalAssets": 260000
+        },
+        {
+          "PublishDate": "2024-05-28",
+          "QuarterLabel": "2024-Q2",
+          "NetSales": 61000,
+          "OperatingIncome": 4900,
+          "DepreciationAndAmortization": 1650,
+          "Equity": 230000,
+          "TotalAssets": 270000
+        },
+        {
+          "PublishDate": "2024-11-21",
+          "QuarterLabel": "2024-Q3",
+          "NetSales": 64000,
+          "OperatingIncome": 5100,
+          "DepreciationAndAmortization": 1700,
+          "Equity": 240000,
+          "TotalAssets": 280000
+        }
+      ]
+    }
+  ]
+}
