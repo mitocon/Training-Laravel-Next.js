@@ -26,7 +26,15 @@ const Companies = () => {
   useEffect(() => {
     const fetchCompanyData = async () => {
       try {
-        const response = await fetch("/data.json");
+        // 環境変数をクライアントサイドで使う場合はNEXT_PUBLIC_というprefixが必須
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+        const response = await fetch(`${apiUrl}/securities_report/list`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            // 認証トークンなど
+          },
+        });
         const jsonData: CompanyData[] = await response.json();
         setCompanyData(jsonData);
       } catch (error) {
