@@ -26,7 +26,13 @@ const Companies = () => {
   useEffect(() => {
     const fetchCompanyData = async () => {
       try {
-        const response = await fetch("/data.json");
+        const response = await fetch("http://localhost:8000/api/securities_report/list", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            // 認証トークンなど
+          },
+        });
         const jsonData: CompanyData[] = await response.json();
         setCompanyData(jsonData);
       } catch (error) {
