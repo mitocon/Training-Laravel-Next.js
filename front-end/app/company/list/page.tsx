@@ -1,6 +1,4 @@
-"use client"; // クライアントコンポーネントとして明示
-
-import { useEffect, useState } from "react";
+import React from "react";
 import {
   Table,
   TableBody,
@@ -20,30 +18,20 @@ type CompanyData = {
   profit: string;
 };
 
-const Companies = () => {
-  const [data, setCompanyData] = useState<CompanyData[]>([]);
+// サーバーサイドでデータを取得
+async function fetchCompanyData(): Promise<CompanyData[]> {
+  const apiUrl = process.env.API_URL;
+  const response = await fetch(`${apiUrl}/securities_report/list`, {
+    cache: "no-store", // SSRで常に最新データを取得
+  });
+  if (!response.ok) {
+    throw new Error("データ取得に失敗しました");
+  }
+  return response.json();
+}
 
-  useEffect(() => {
-    const fetchCompanyData = async () => {
-      try {
-        // 環境変数をクライアントサイドで使う場合はNEXT_PUBLIC_というprefixが必須
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-        const response = await fetch(`${apiUrl}/securities_report/list`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            // 認証トークンなど
-          },
-        });
-        const jsonData: CompanyData[] = await response.json();
-        setCompanyData(jsonData);
-      } catch (error) {
-        console.error("データ取得に失敗しました", error);
-      }
-    };
-
-    fetchCompanyData();
-  }, []);
+export default async function Companies() {
+  const fetchedCompanyData = await fetchCompanyData();
 
   return (
     <div style={{ padding: "20px" }}>
@@ -67,7 +55,7 @@ const Companies = () => {
           {/* ボディ */}
           <TableBody>
             {/* 各会社のデータをTableRow行としてレンダリング */}
-            {data.map((company, index) => (
+            {fetchedCompanyData.map((company, index) => (
               <TableRow key={index}>
                 <TableCell>{company.company_name}</TableCell>
                 <TableCell>{company.stock_code}</TableCell>
@@ -82,6 +70,3 @@ const Companies = () => {
     </div>
   );
 };
-
-// 他のファイルで利用できるようにエクスポート
-export default Companies;
