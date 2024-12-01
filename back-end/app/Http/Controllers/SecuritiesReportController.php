@@ -106,11 +106,11 @@ class SecuritiesReportController extends Controller
 
     function getSecuritiesReportList(): JsonResponse
     {
-        $filePath = base_path("content/SecuritiesReport/dummy/all.json");
+        $filePath = base_path("content/SecuritiesReport/dummy/data.json");
         $fileContent = File::get($filePath);
         $data = json_decode($fileContent, true);
 
-        return response()->json($data);
+        return response()->json($data, 200, [], JSON_UNESCAPED_UNICODE);
     }
 
     public function getSecuritiesReport(int $company_id): JsonResponse

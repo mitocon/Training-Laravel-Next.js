@@ -1,0 +1,30 @@
+[
+    {
+    "company_name": "株式会社A",
+    "stock_code": "1234",
+    "announcement_date": "2024-11-15",
+    "revenue": "10億円",
+    "profit": "2億円"
+    },
+    {
+    "company_name": "株式会社B",
+    "stock_code": "5678",
+    "announcement_date": "2024-11-14",
+    "revenue": "20億円",
+    "profit": "5億円"
+    },
+    {
+    "company_name": "株式会社C",
+    "stock_code": "9101",
+    "announcement_date": "2024-11-13",
+    "revenue": "15億円",
+    "profit": "3億円"
+    },
+    {
+    "company_name": "株式会社D",
+    "stock_code": "5678",
+    "announcement_date": "2024-11-14",
+    "revenue": "20億円",
+    "profit": "5億円"
+    }
+]
