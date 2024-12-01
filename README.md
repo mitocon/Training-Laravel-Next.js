@@ -1,6 +1,12 @@
 ## 実装内容
+#### 目次
+- PJ作成
+- BE実装内容
+- FE実装内容
+
 ### PJ作成
 - GitHubリポジトリ作成
+- ローカル環境の設定
 - back-end（BE）をLaravelで作成
 - front-end（FE）をReact Next.jsで作成
 - README.mdの作成
