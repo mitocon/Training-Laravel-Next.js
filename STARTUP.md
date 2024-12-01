@@ -1,0 +1,85 @@
+## リポジトリ初回作成手順
+スクラップ後を想定したリポジトリ作成手順となります
+
+- ローカルマシンでSSHキーを作成
+```
+ssh-keygen -t rsa -b 4096 -C "{{メルアド}}" -f ~/.ssh/{{ファイル名}}
+
+例：ssh-keygen -t rsa -b 4096 -C "hogehoge@gmail.com" -f ~/.ssh/id_rsa_personal
+```
+- ~/.ssh/configを設定
+```
+vim ~/.ssh/config
+```
+```
+# configファイル内
+Host github-workinfo
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_workinfo
+  IdentitiesOnly yes
+
+# Hostは任意
+# HostName、Userは固定
+# IdentityFileは先ほどのSSHキー
+```
+
+### 作業リポジトリを作成
+GitHubアカウントは作成済みとする。以下bash
+```
+mkdir Training-Laravel-Next.js
+cd Training-Laravel-Next.js
+git init
+git branch -m main
+git config user.name "{{your name}}"
+git config user.email "{{your email}}"
+```
+
+- GitHubブラウザ上でリモートリポジトリを作成。Training-Laravel-Next.jsなど
+- SSHを控えておく（git@github.com:mitocon/Training-Laravel-Next.js.git）
+- ローカルで以下のコマンドを実行してremote add
+```
+# configで設定したエイリアスを使用時
+git remote add origin git@github-workinfo:mitocon/Training-Laravel-Next.js.git
+
+# git@{{エイリアス}}:{{ユーザー名}}/{{リポジトリ名}}
+# git remote -v でリモートリポジトリを確認できる
+```
+
+- 確認
+```
+ssh -T git@github-workinfo
+
+# @以降はエイリアス
+# Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.
+# この表示でOK
+```
+
+### commit, push
+- 適当なファイルを作ってadd, commit, pushする
+```
+touch README.md
+git add .
+git commit -m "initial commit"
+git push -u origin main
+```
+
+完了
+
+## 起動時
+### back-end
+php -v で8.2以上であること。  
+```
+PJルートディレクトリで実行
+$ (cd back-end && php artisan serve)
+```
+
+### front-end
+```
+PJルートディレクトリで実行
+$ (cd front-end && npm run dev)
+```
+
+#### XBRL形式でのデータ取得方法
+ブラウザで http://localhost:8000/api/get_securities_report を叩く  
+するとback-end/content内にファイルをDLする
