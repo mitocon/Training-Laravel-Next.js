@@ -1,6 +1,16 @@
 "use client"; // クライアントコンポーネントとして明示
 
 import { useEffect, useState } from "react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Typography,
+} from "@mui/material";
 
 type CompanyData = {
   company_name: string;
@@ -11,62 +21,59 @@ type CompanyData = {
 };
 
 const Companies = () => {
-  const [data, setData] = useState<CompanyData[]>([]);
+  const [data, setCompanyData] = useState<CompanyData[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchCompanyData = async () => {
       try {
         const response = await fetch("/data.json");
         const jsonData: CompanyData[] = await response.json();
-        setData(jsonData);
+        setCompanyData(jsonData);
       } catch (error) {
         console.error("データ取得に失敗しました", error);
       }
     };
 
-    fetchData();
+    fetchCompanyData();
   }, []);
-
-  const styles: { th: React.CSSProperties; td: React.CSSProperties } = {
-    th: {
-      border: "1px solid #ddd",
-      padding: "8px",
-      textAlign: "left",
-      backgroundColor: "#f2f2f2",
-    },
-    td: {
-      border: "1px solid #ddd",
-      padding: "8px",
-    },
-  };
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1>上場企業の決算発表データ</h1>
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
-        <thead>
-          <tr>
-            <th style={styles.th}>会社名</th>
-            <th style={styles.th}>証券コード</th>
-            <th style={styles.th}>発表日</th>
-            <th style={styles.th}>売上高</th>
-            <th style={styles.th}>利益</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((company, index) => (
-            <tr key={index}>
-              <td style={styles.td}>{company.company_name}</td>
-              <td style={styles.td}>{company.stock_code}</td>
-              <td style={styles.td}>{company.announcement_date}</td>
-              <td style={styles.td}>{company.revenue}</td>
-              <td style={styles.td}>{company.profit}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <Typography variant="h4" gutterBottom>
+        上場企業の決算発表データ
+      </Typography>
+      <TableContainer component={Paper} style={{ marginTop: "20px" }}>
+        {/* Material-UIのTableコンポーネント */}
+        <Table>
+          {/* ヘッダー */}
+          <TableHead>
+            <TableRow>
+              {/* 各列のヘッダーセルをTableCellで定義 */}
+              <TableCell><strong>会社名</strong></TableCell>
+              <TableCell><strong>証券コード</strong></TableCell>
+              <TableCell><strong>発表日</strong></TableCell>
+              <TableCell><strong>売上高</strong></TableCell>
+              <TableCell><strong>利益</strong></TableCell>
+            </TableRow>
+          </TableHead>
+          {/* ボディ */}
+          <TableBody>
+            {/* 各会社のデータをTableRow行としてレンダリング */}
+            {data.map((company, index) => (
+              <TableRow key={index}>
+                <TableCell>{company.company_name}</TableCell>
+                <TableCell>{company.stock_code}</TableCell>
+                <TableCell>{company.announcement_date}</TableCell>
+                <TableCell>{company.revenue}</TableCell>
+                <TableCell>{company.profit}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 };
 
+// 他のファイルで利用できるようにエクスポート
 export default Companies;
