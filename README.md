@@ -68,14 +68,16 @@ git push -u origin main
 
 ## 起動時
 ### back-end
-php -v で8.2以上であること。
+php -v で8.2以上であること。  
 ```
-php artisan serve
+PJルートディレクトリで実行
+$ (cd back-end && php artisan serve)
 ```
 
-### back-end
+### front-end
 ```
-npm run dev
+PJルートディレクトリで実行
+$ (cd front-end && npm run dev)
 ```
 
 #### XBRL形式でのデータ取得方法
